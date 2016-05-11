@@ -21,7 +21,7 @@ static UIPopoverPresentationController *presentationController_;
 static UIView *dimmingView_;
 
 static const CGFloat JMActionSheetDefaultWidth = 320.0f;
-static const CGFloat JMActionSheetDefaultHeight = 50.0f;
+static const CGFloat JMActionSheetDefaultHeight = 55.0f;
 
 typedef NS_ENUM(NSUInteger, JMActionSheetOSStragey) {
     JMActionSheetManualPresentation,
