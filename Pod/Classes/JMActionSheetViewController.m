@@ -22,7 +22,7 @@ static const CGFloat JMActionSheetPadding               = 10.0f;
 static const CGFloat JMActionSheetInterlineSpacing      = 1.0f;
 static const CGFloat JMActionSheetRoundedCornerRadius   = 0.0f;
 
-static const CGFloat JMActionSheetButtonHeight          = 40.0f;
+static const CGFloat JMActionSheetButtonHeight          = 55.0f;
 static const CGFloat JMActionSheetImageViewHeight       = 150.0f;
 static const CGFloat JMActionSheetPickerViewHeight      = 216.0f;
 
