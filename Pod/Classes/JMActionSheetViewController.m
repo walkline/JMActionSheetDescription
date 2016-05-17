@@ -19,7 +19,7 @@
 #import "JMActionSheetCollectionImageCell.h"
 
 static const CGFloat JMActionSheetPadding               = 10.0f;
-static const CGFloat JMActionSheetInterlineSpacing      = 1.0f;
+static const CGFloat JMActionSheetInterlineSpacing      = 0.0f;
 static const CGFloat JMActionSheetRoundedCornerRadius   = 0.0f;
 
 static const CGFloat JMActionSheetButtonHeight          = 55.0f;
@@ -373,11 +373,11 @@ static const CGFloat JMActionSheetCollectionViewWidth   = 60.0f;
 #pragma mark - Button constructor
 
 - (UIView *)addButtonViewForItem:(JMActionSheetItem *)item
-                         forTag:(NSInteger)tag
-                        corners:(UIRectCorner)corners
-                         offset:(CGFloat *)yOffset
+                          forTag:(NSInteger)tag
+                         corners:(UIRectCorner)corners
+                          offset:(CGFloat *)yOffset
 {
-
+    
     //Compute frame
     CGFloat y = *yOffset - JMActionSheetButtonHeight;
     CGRect frame = CGRectMake(JMActionSheetPadding,
@@ -399,6 +399,16 @@ static const CGFloat JMActionSheetCollectionViewWidth   = 60.0f;
     
     self.actions[tag] = action;
     [self.view addSubview:button];
+    
+    CGRect separFrame = CGRectMake(JMActionSheetPadding,
+                                   y,
+                                   CGRectGetWidth(self.view.bounds) - 2 * JMActionSheetPadding,
+                                   1);
+    
+    UIView * separatorView = [[UIView alloc]initWithFrame:separFrame];
+    separatorView.backgroundColor = [UIColor colorWithRed:212.0f/255 green:212.0f/255 blue:212.0f/255 alpha:0.99f];
+    [self.view addSubview:separatorView];
+    
     *yOffset = CGRectGetMinY(button.frame) - JMActionSheetInterlineSpacing;
     return button;
 }
